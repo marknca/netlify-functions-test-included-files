@@ -2,9 +2,9 @@ exports.handler = async function (event, context) {
     const fs = require('fs');
     let fns = [];
     //const path = require("path");
-    //let currentPath = path.resolve(path.basename(__dirname))
+    let currentPath = path.resolve(path.basename(__dirname))
     //let currentFile = path.join(currentPath, 'index.js')
-    fs.readdir('.', (err, files) => {
+    fs.readdir(currentPath, (err, files) => {
         files.forEach(file => {
             fns.push(file);
         });
