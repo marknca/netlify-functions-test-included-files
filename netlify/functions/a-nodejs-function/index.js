@@ -1,7 +1,7 @@
 exports.handler = async function (event, context) {
     const fs = require('fs');
     let fns = [];
-    //const path = require("path");
+    const path = require("path");
     let currentPath = path.resolve(path.basename(__dirname))
     //let currentFile = path.join(currentPath, 'index.js')
     fs.readdir(currentPath, (err, files) => {
