@@ -1,4 +1,8 @@
+[default]
 baseURL = 'http://hugo-quickstart-template.netlify.com'
-languageCode = 'en-us'
+defaultContentLanguage = 'en'
 title = 'Netlify + Hugo Quickstart'
 theme = 'netlify-basic'
+
+[languages]
+languageCode = 'en-ca'
