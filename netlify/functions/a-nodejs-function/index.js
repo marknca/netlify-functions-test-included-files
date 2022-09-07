@@ -8,24 +8,26 @@ exports.handler = async function (event, context) {
             fns.push(file);
         });
     });
-    doc = "";
-    try {
-        let currentFile = path.join(currentPath, 'data', 'sample.json')
-        doc = fs.readFileSync(currentFile);
-    }
-    catch(err) {
-        doc = err.message;
-    }
-    doc2 = "";
-    try {
-        let currentFile2 = path.join(currentPath, 'sample-data.json')
-        doc2 = fs.readFileSync(currentFile2);
-    }
-    catch(err) {
-        doc2 = err.message;
-    }
+    let docs = []
+    [
+    './data/sample.json',
+    path.join(currentPath, 'data', 'sample.json'),
+    '/data/sample.json',
+    './sample-data.json',
+    path.join(currentPath, 'sample-data.json'),
+    'sample-data.json',
+    ].forEach(function(path) {
+        resultFromPath = ""
+        try {
+            resultFromPath = fs.readFileSync(path);
+        }
+        catch(err) {
+            resultFromPath = err.message;
+        }
+        docs.push({ path: resultFromPath})
+    });
     return {
         statusCode: 200,
-        body: JSON.stringify({ message: "a-nodejs-function TEST MESSAGE", files: fns, document: doc, document_2: doc2 }),
+        body: JSON.stringify({ message: "a-nodejs-function TEST MESSAGE", files: fns, documents: docs }),
     };
 };
