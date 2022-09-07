@@ -24,7 +24,7 @@ exports.handler = async function (event, context) {
         catch(err) {
             resultFromPath = err.message;
         }
-        docs.push({ path: resultFromPath})
+        docs.push({ str(path): resultFromPath})
     });
     return {
         statusCode: 200,
