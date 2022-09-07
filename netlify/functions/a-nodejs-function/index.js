@@ -16,8 +16,16 @@ exports.handler = async function (event, context) {
     catch(err) {
         doc = err.message;
     }
+    doc2 = "";
+    try {
+        let currentFile2 = path.join(currentPath, 'sample-data.json')
+        doc2 = fs.readFileSync(currentFile2);
+    }
+    catch(err) {
+        doc2 = err.message;
+    }
     return {
         statusCode: 200,
-        body: JSON.stringify({ message: "a-nodejs-function TEST MESSAGE", files: fns, document: doc }),
+        body: JSON.stringify({ message: "a-nodejs-function TEST MESSAGE", files: fns, document: doc, document_2: doc2 }),
     };
 };
