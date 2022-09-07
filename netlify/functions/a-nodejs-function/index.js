@@ -8,7 +8,7 @@ exports.handler = async function (event, context) {
             fns.push(file);
         });
     });
-    let docs = []
+    let docs = [];
     [
     './data/sample.json',
     path.join(currentPath, 'data', 'sample.json'),
