@@ -1,5 +1,5 @@
 # example netlify.toml
-[[build]]
+[build]
   command = "hugo"
   functions = "netlify/functions"
   publish = "public"
@@ -7,7 +7,7 @@
   [build.environment]
     HUGO_VERSION = "0.101.0"
 
-[[plugins]]
+[plugins]
   package = "netlify-plugin-cypress"
 
   [plugins.inputs.postBuild]
