@@ -9,7 +9,7 @@
 
 [functions]
   node_bundler = "esbuild"
-  included_files = ["./data/*.json"]
+  included_files = ["./data/*.json", "data/*", "**.json"]
 
 [[plugins]]
   package = "netlify-plugin-cypress"
