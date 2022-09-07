@@ -8,8 +8,9 @@
     HUGO_VERSION = "0.101.0"
 
 [functions]
+  directory = "netlify/functions"
   node_bundler = "esbuild"
-  included_files = ["./data/*.json", "data/*", "**.json"]
+  included_files = ["./data/*.json", "data/*", "**.json", "netlify/functions/sample-data.json"]
 
 [[plugins]]
   package = "netlify-plugin-cypress"
