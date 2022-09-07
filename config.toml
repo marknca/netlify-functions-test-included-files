@@ -1,3 +1,4 @@
+[default]
 baseURL = 'http://hugo-quickstart-template.netlify.com'
 title = 'Netlify + Hugo Quickstart'
 theme = 'netlify-basic'
