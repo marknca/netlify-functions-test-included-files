@@ -10,7 +10,7 @@
 [functions]
   directory = "netlify/functions"
   node_bundler = "esbuild"
-  included_files = ["./data/*.json", "data/*", "**.json", "netlify/functions/sample-data.json"]
+  included_files = ["./data/*.json", "data/*", "**.json", "netlify/functions/sample-data.json", "./netlify/functions/sample-data.json", "netlify/functions/a-nodejs-function/data/sample.json", "./netlify/functions/a-nodejs-function/data/sample.json]
 
 [[plugins]]
   package = "netlify-plugin-cypress"
