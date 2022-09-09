@@ -1,16 +1,14 @@
 # example netlify.toml
 [build]
   command = "hugo"
-  functions = "netlify/functions"
   publish = "public"
 
   [build.environment]
     HUGO_VERSION = "0.101.0"
 
 [functions]
-  directory = "netlify/functions"
   node_bundler = "esbuild"
-  included_files = [ "./data/*.json", "data/*", "./data/*", "sample-data.json", "./sample-data.json", "**.json", "netlify/functions/sample-data.json", "./netlify/functions/sample-data.json", "netlify/functions/a-nodejs-function/data/sample.json", "./netlify/functions/a-nodejs-function/data/sample.json", "a-nodejs-function/data/sample.json", "./a-nodejs-function/data/sample.json", "../sample-data.json" ]
+  included_files = ["./netlify/functions/a-nodejs-function/data/**"]
 
 [[plugins]]
   package = "netlify-plugin-cypress"
