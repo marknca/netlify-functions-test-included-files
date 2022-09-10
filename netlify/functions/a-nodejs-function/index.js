@@ -10,6 +10,7 @@ exports.handler = async function (event, context) {
     });
     let docs = [];
     [
+    './netlify/functions/a-nodejs-function/data/sample.json',
     './data/sample.json',
     path.join(currentPath, 'data', 'sample.json'),
     '/data/sample.json',
